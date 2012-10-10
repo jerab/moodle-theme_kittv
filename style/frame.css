@@ -46,7 +46,7 @@
 
 #wrapper,
 #footerwrapper {
-    padding:10px 17px 0 17px;
+    padding:3px 10px 0 10px;
     float:none; /* serve a qualcosa? */
     /*clear:both;*/
     /*overflow:hidden;*/
@@ -54,7 +54,7 @@
 
 #frametop,
 #footerframetop {
-    margin:0px 15px 0;
+    margin:0;
     background-position:0 0;
     background-repeat:repeat-x;
     min-width:934px;

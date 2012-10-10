@@ -8,6 +8,12 @@
 .course-content ul.weeks li.section .left {padding:5px 0;}
 .course-content ul.weeks li.section .right {padding:5px 0;}
 .course-content ul.topics h3.sectionname {font-size:130%;color:#FF0000}
+.course-content ul.topics li.section div.content {margin: 0;}
+.course-content ul.topics li.section.yui3-dd-drop div.content {margin: 0 40px;}
+.course-content ul.topics li.section div.right,
+.course-content ul.topics li.section div.left {width: 0;}
+.course-content ul.topics li.section.yui3-dd-drop div.right,
+.course-content ul.topics li.section.yui3-dd-drop div.left {width: 40px;}
 
 /** Course **/
 .coursebox {border-botom:1px solid #DDD;border-color:#DDDDDD;margin-bottom:10px;}
