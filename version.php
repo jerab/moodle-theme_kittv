@@ -26,5 +26,5 @@
 defined('MOODLE_INTERNAL') || die;
 
 $plugin->version   = 2013091501; // The current module version (Date: YYYYMMDDXX)
-$plugin->requires  = 20130913; // Requires this Moodle version
+$plugin->requires  = 2013051400; // Requires this Moodle version
 $plugin->component = 'theme_kittv'; // Full name of the plugin (used for diagnostics)
