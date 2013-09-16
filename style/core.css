@@ -10,6 +10,7 @@ span.idnumber {
     font-size: 90%;
     font-weight: normal;
     color: #555;
+    margin-left: 5px;
 }
 
 .sitetopic {

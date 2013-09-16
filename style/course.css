@@ -130,3 +130,9 @@
 #page-course-publish-metadata .hublink {}
 #page-course-publish-backup .courseuploadtextinfo {text-align:center;}
 #page-course-publish-backup .sharecoursecontinue  {text-align:center;}
+
+.coursebox > .info > .name a {
+	background-image: none;
+	padding-left: 0;
+	display: inline-block;
+}
