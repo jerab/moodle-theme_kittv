@@ -1,0 +1,148 @@
+/* Custom CSS
+-------------------------*/
+body {
+	padding-top: 50px;
+	background: #fffffe;
+}
+
+a.logo {
+    background: url([[pix:theme|moodle-it_logo]]) no-repeat 0 0;
+    background-color: #eee0cd;
+    display: block;
+    float: left;
+    height: 111px;
+    margin: 0 0 5px 0;
+    padding: 0;
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+}
+
+.dir-rtl a.logo {
+    background: url([[setting:logo]]) no-repeat 100% 0;
+    display: block;
+    float: right;
+}
+
+/* side blocks */
+.block {
+	background-color: #fffff0;
+	padding-top: 0;
+	border-radius: 0 0 4px 4px;	
+}
+
+.block div.header {
+	background: url([[pix:theme|gradient_h]]) #ccc repeat-x;	
+}
+
+.block .header h2 {
+	color: #000;
+	font-size: 15px;
+	line-height: 16px;	
+}
+
+.breadcrumb {
+	background: #ccc;
+	border-radius: 0 0 0 4px;
+}
+
+.breadcrumb > li {
+	text-shadow: none;
+}
+
+.breadcrumb > li > .divider {
+    color: #fffff0;
+}
+
+/* MAIN REGION */
+
+#region-main .content h2 {
+	font-size: 23px;
+	line-height: 26px;	
+}
+
+#region-main .content h3 {
+	font-size: 20px;
+	line-height: 20px;	
+}
+
+/** list of courses **/
+/* category boxes */
+.course_category_tree {
+	margin-bottom: 10px;
+}
+
+.course_category_tree .category {
+	/*background-color: #f5f5f5;*/
+    /*border: 1px solid #e3e3e3;*/    
+}
+
+.course_category_tree .category > .info {
+	border-radius: 0;
+	border: none;
+	background: none;
+	box-shadow: none;	
+}
+
+.course_category_tree .content .subcategories {
+	display: table;
+    margin: 0 auto 5px;
+}
+.course_category_tree > .content > .subcategories {
+	margin-bottom: 20px;
+}
+
+.course_category_tree.category-browse .content .subcategories {
+	display: block;	
+}
+
+.course_category_tree .content .subcategories h3,
+.course_category_tree .content .subcategories h4,
+.course_category_tree .content .subcategories h5,
+.course_category_tree .content .subcategories h6 {
+	font-size: 17px;
+	line-height: 19px;
+}	
+
+/* course boxes */
+.course_category_tree .category > .content {
+	padding-left: 30px;	
+}
+
+.courses .coursebox, .courses .coursebox.collapsed {
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px solid #ddd;
+	padding: 3px;	
+}
+
+.courses .coursebox.even, .courses .coursebox.odd:hover {
+	background: none;	
+}
+
+.coursebox > .info > .coursename {
+	float: left;
+	margin: 5px 0;
+	font-size: 16px;
+}	
+
+.coursebox > .info > .coursename a {
+	background: none;
+	padding-left: 0;	
+}
+/* id number */
+.coursebox > .info > .coursename span {	
+	color: #555;
+	font-size: 14px;
+}
+
+button,
+input.form-submit,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+	white-space: normal;
+} 
+
+/* Custom CSS Settings
+-------------------------*/
+[[setting:customcss]]
