@@ -32,11 +32,6 @@
  * @return string The parsed CSS The parsed CSS.
  */
 function theme_kittv_process_css($css, $theme) {
-
-    // Set the background image for the logo.
-    $logo = $theme->setting_file_url('logo', 'logo');
-    $css = theme_kittv_set_logo($css, $logo);
-
     // Set custom CSS.
     if (!empty($theme->settings->customcss)) {
         $customcss = $theme->settings->customcss;
@@ -44,25 +39,6 @@ function theme_kittv_process_css($css, $theme) {
         $customcss = null;
     }
     $css = theme_kittv_set_customcss($css, $customcss);
-
-    return $css;
-}
-
-/**
- * Adds the logo to CSS.
- *
- * @param string $css The CSS.
- * @param string $logo The URL of the logo.
- * @return string The parsed CSS
- */
-function theme_kittv_set_logo($css, $logo) {
-    $tag = '[[setting:logo]]';
-    $replacement = $logo;
-    if (is_null($replacement)) {
-        $replacement = '';
-    }
-
-    $css = str_replace($tag, $replacement, $css);
 
     return $css;
 }
@@ -129,11 +105,7 @@ function theme_kittv_get_html_for_settings(renderer_base $output, moodle_page $p
         $return->navbarclass .= ' navbar-inverse';
     }
 
-    if (!empty($page->theme->settings->logo)) {
-        $return->heading = html_writer::link($CFG->wwwroot, '', array('title' => get_string('home'), 'class' => 'logo'));
-    } else {
-        $return->heading = $output->page_heading();
-    }
+    $return->heading = html_writer::link($CFG->wwwroot, '', array('title' => get_string('home'), 'class' => 'logo'));
 
     $return->footnote = '';
     if (!empty($page->theme->settings->footnote)) {
@@ -148,14 +120,6 @@ function theme_kittv_get_html_for_settings(renderer_base $output, moodle_page $p
  * @deprecated since 2.5.1
  */
 function kittv_process_css() {
-    throw new coding_exception('Please call theme_'.__FUNCTION__.' instead of '.__FUNCTION__);
-}
-
-/**
- * All theme functions should start with theme_kittv_
- * @deprecated since 2.5.1
- */
-function kittv_set_logo() {
     throw new coding_exception('Please call theme_'.__FUNCTION__.' instead of '.__FUNCTION__);
 }
 
