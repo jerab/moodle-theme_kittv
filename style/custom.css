@@ -123,6 +123,7 @@ a.logo {
 	float: left;
 	margin: 5px 0;
 	font-size: 16px;
+	line-height: 20px;
 }	
 
 .coursebox > .info > .coursename a {
