@@ -32,6 +32,9 @@ if (right_to_left()) {
     $regionbsid = 'region-bs-main-and-pre';
 }
 
+$hassidepre = $PAGE->blocks->region_has_content('side-pre', $OUTPUT);
+$hassidepost = $PAGE->blocks->region_has_content('side-post', $OUTPUT);
+
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
 <head>
@@ -79,19 +82,23 @@ echo $OUTPUT->doctype() ?>
     </header>
 
     <div id="page-content" class="row-fluid">
-        <div id="<?php echo $regionbsid ?>" class="span10">
+        <div id="<?php echo $regionbsid ?>" class="<?php if($hassidepost) :?>span10<?php else:?>span12<?php endif;?>">
             <div class="row-fluid">
-                <section id="region-main" class="span9 pull-right">
+                <section id="region-main" class="<?php if($hassidepre):?>span10<?php else:?>span12<?php endif;?> pull-right">
                     <?php
                     echo $OUTPUT->course_content_header();
                     echo $OUTPUT->main_content();
                     echo $OUTPUT->course_content_footer();
                     ?>
                 </section>
-                <?php echo $OUTPUT->blocks('side-pre', 'span3 desktop-first-column'); ?>
+                <?php if($hassidepre) {
+					echo $OUTPUT->blocks('side-pre', 'span2 desktop-first-column');
+                }?>
             </div>
         </div>
-        <?php echo $OUTPUT->blocks('side-post', 'span2'); ?>
+        <?php if($hassidepost) {
+		echo $OUTPUT->blocks('side-post', 'span2');
+        }?>
     </div>
 
     <footer id="page-footer">

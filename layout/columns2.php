@@ -26,6 +26,8 @@
 $html = theme_kittv_get_html_for_settings($OUTPUT, $PAGE);
 
 $left = (!right_to_left());  // To know if to add 'pull-right' and 'desktop-first-column' classes in the layout for LTR.
+$hassidepre = $PAGE->blocks->region_has_content('side-pre', $OUTPUT);
+
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes(); ?>>
 <head>
@@ -73,7 +75,7 @@ echo $OUTPUT->doctype() ?>
     </header>
 
     <div id="page-content" class="row-fluid">
-        <section id="region-main" class="span9<?php if ($left) { echo ' pull-right'; } ?>">
+        <section id="region-main" class="<?php if($hassidepre) { echo 'span10'; }else { echo 'span12'; } if ($left) { echo ' pull-right'; } ?>">
             <?php
             echo $OUTPUT->course_content_header();
             echo $OUTPUT->main_content();
@@ -81,11 +83,13 @@ echo $OUTPUT->doctype() ?>
             ?>
         </section>
         <?php
-        $classextra = '';
-        if ($left) {
-            $classextra = ' desktop-first-column';
+        if($hassidepre) {
+			$classextra = '';
+	        if ($left) {
+	            $classextra = ' desktop-first-column';
+	        }
+			echo $OUTPUT->blocks('side-pre', 'span2'.$classextra);
         }
-        echo $OUTPUT->blocks('side-pre', 'span3'.$classextra);
         ?>
     </div>
 

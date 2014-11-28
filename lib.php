@@ -34,8 +34,8 @@
 function theme_kittv_process_css($css, $theme) {
 
     // Set the background image for the logo.
-    $logo = $theme->setting_file_url('logo', 'logo');
-    $css = theme_kittv_set_logo($css, $logo);
+    //$logo = $theme->setting_file_url('logo', 'logo');
+    //$css = theme_kittv_set_logo($css, $logo);
 
     // Set custom CSS.
     if (!empty($theme->settings->customcss)) {
@@ -55,6 +55,7 @@ function theme_kittv_process_css($css, $theme) {
  * @param string $logo The URL of the logo.
  * @return string The parsed CSS
  */
+/*
 function theme_kittv_set_logo($css, $logo) {
     $tag = '[[setting:logo]]';
     $replacement = $logo;
@@ -66,7 +67,7 @@ function theme_kittv_set_logo($css, $logo) {
 
     return $css;
 }
-
+*/
 /**
  * Serves any files associated with the theme settings.
  *
@@ -87,6 +88,7 @@ function theme_kittv_pluginfile($course, $cm, $context, $filearea, $args, $force
         send_file_not_found();
     }
 }
+
 
 /**
  * Adds any custom CSS to the CSS before it is cached.
@@ -129,11 +131,11 @@ function theme_kittv_get_html_for_settings(renderer_base $output, moodle_page $p
         $return->navbarclass .= ' navbar-inverse';
     }
 
-    if (!empty($page->theme->settings->logo)) {
+    //if (!empty($page->theme->settings->logo)) {
         $return->heading = html_writer::link($CFG->wwwroot, '', array('title' => get_string('home'), 'class' => 'logo'));
-    } else {
+    /*} else {
         $return->heading = $output->page_heading();
-    }
+    }*/
 
     $return->footnote = '';
     if (!empty($page->theme->settings->footnote)) {
@@ -155,10 +157,11 @@ function kittv_process_css() {
  * All theme functions should start with theme_kittv_
  * @deprecated since 2.5.1
  */
+/*
 function kittv_set_logo() {
     throw new coding_exception('Please call theme_'.__FUNCTION__.' instead of '.__FUNCTION__);
 }
-
+*/
 /**
  * All theme functions should start with theme_kittv_
  * @deprecated since 2.5.1
