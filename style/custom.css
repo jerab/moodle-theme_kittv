@@ -91,7 +91,8 @@ a.logo {
 	margin-bottom: 20px;
 }
 
-.course_category_tree.category-browse .content .subcategories {
+.course_category_tree.category-browse .content .subcategories,
+.frontpage-category-names.course_category_tree .content .subcategories{
 	display: block;	
 }
 
